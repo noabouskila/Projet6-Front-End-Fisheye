@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <title>Fisheye</title>
+  </head>
+  <body>
+    <header role="banner">
+      <a href="index.html" aria-label="lien vers page accueil">
+        <img src="assets/images/logo.png" class="logo" alt="logo-fisheye"/> 
+      </a>
+        <h1>Nos photographes</h1>
+    </header>
+    <main id="main" role="main">
+        <div class="photographer_section" aria-label="affichage des photographes"></div>
+   </main>
+
+    <script src="/scripts/models/contactForm.js"></script>
+    <script src="/scripts/models/Card.js"></script>
+    <script src="/scripts/models/PhotographerCard.js"></script>
+
+    <script src="/scripts/factories/MediaFactory.js"></script>
+
+    <script src="/scripts/pages/TemplatePhotographer.js"></script>
+    <script src="/scripts/pages/TemplateCard.js"></script>
+
+    <script src="/scripts/api/Api.js"></script>
+
+    <!-- point d'entrée à mettre en dernier -->
+    <script src="/scripts/App.js"></script>
+
+  </body>
+</html>

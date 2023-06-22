@@ -1,0 +1,220 @@
+#contact_modal {
+    display: none;
+    position: absolute;
+    top: 30px;
+    left : 25%;
+}
+
+.photograph-header {
+    background-color: #FAFAFA;
+    height: 150px;
+    margin: 0 100px;
+    padding: 3% 2%;
+}
+
+.contact_button {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 11px;
+    width: 170px;
+    height: 70px;
+    border: none;
+    background-color: #901C1C;
+    border-radius: 5px;
+    cursor: pointer;
+    /*  */
+    margin-top: 4%;
+}
+
+.modal {
+    border-radius: 5px;
+    background-color: #DB8876;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px;
+    margin: auto;
+}
+
+.modal header {
+    justify-content: space-between;
+    width: 100%;
+}
+
+.modal header img {
+    cursor: pointer;
+}
+
+.modal header h2 {
+    font-size: 50px;
+    font-weight: normal;
+    text-align: start;
+}
+
+form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top : 10%;
+}
+
+form label {
+    color: #312E2E;
+    font-size: 36px;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: self-start;
+    margin-bottom: 26px;
+}
+
+form input {
+    width: 100%;
+    height: 68px;
+    border: none;
+    border-radius: 5px;
+}
+
+
+
+.heart , .heartTotal{
+    width: 10%
+}
+
+.photographer-media-div{
+    margin: 2% 100px;
+    display: flex;
+    flex-wrap : wrap;
+    justify-content: space-between;
+}
+.photographer-media-div article {
+    display: flex;
+    flex-direction : column;
+    width :30% ;
+}
+.div-sort{
+    margin: 2% 100px
+}
+#sort{
+    background : #901C1C;
+    color : white;
+    padding : 1%
+}
+#sort  .option-sort{
+    /*  */
+}
+
+.titleMedia{
+    display : flex;
+    justify-content: space-between;
+}
+.like {
+    display : flex;
+    justify-content: end;
+    width :60%
+}
+.mediaDisplayLike{
+    padding : 0 5%
+}
+
+
+.articleInfoDOM{
+    display :flex;
+    justify-content: space-between;
+}
+.img-page-photo{
+    width: 15%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.likeTarif{
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 19px;
+    width: 20%;
+    margin: 0 75%;
+    background-color: #DB8876
+} 
+
+.nbLikes{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    justify-content: start;
+}
+.nbLikes p{
+   margin-right : 4%
+}
+
+
+/* medias */
+.imgVidMedia{
+    height: 280px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.lightbox .imgVidMedia{
+    height: 400px;
+    width: 92%;
+    object-fit: cover;
+}
+
+
+/* medias modal */
+#media_modal{
+    display: none;
+    /* border: 1px solid black;
+    border-radius: 5px; */
+    width: 90%;
+    margin: auto;
+}
+
+.lightbox > img{
+    /* display: flex;
+    justify-content: end;
+    padding-right: 2%; */
+    position: relative;
+    left: 98%;
+    top: 45px;
+    width: 3%;
+}
+
+#media_modal main{
+display: flex;
+justify-content: space-between;
+padding: 1%;
+}
+
+.colorMedia{
+    color :#901C1C
+}
+
+
+
+/* messages d'erreur du formulaire */
+.error-message{
+    color: #901C1C;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+.lightbox-prev , .lightbox-next{
+    margin: auto 0;
+    cursor : pointer;
+}
+
+.closeModal{
+    cursor: pointer
+}
+
+
