@@ -15,7 +15,7 @@ class TemplateCard{
         `
         <a href=" ${this._photo.href}?id=${this._photo.id} "style="text-decoration:none">
         <article>
-            <img class="portrait" src="/assets/photographers/portraitPhotographers/${this._photo.portrait}" alt="image photagraphe : ${this._photo.name}">
+            <img class="portrait" src="./assets/photographers/portraitPhotographers/${this._photo.portrait}" alt="image photagraphe : ${this._photo.name}">
             <h2>${this._photo.name}</h2>
             <h3>${this._photo.city}/${this._photo.country}</h3>
             <p>${this._photo.tagline}</p>

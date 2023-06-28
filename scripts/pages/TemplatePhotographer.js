@@ -120,7 +120,7 @@ class TemplatePhotographer{
     getUserInfoDOM() {
         const article = document.createElement("article");
         article.setAttribute("class" , "articleInfoDOM")
-        const portrait = `/assets/photographers/portraitPhotographers/${this.currentPhotographer.portrait}`
+        const portrait = `./assets/photographers/portraitPhotographers/${this.currentPhotographer.portrait}`
         article.innerHTML =`
             <div class="information">
                 <h2>${this.currentPhotographer.name}</h2>
