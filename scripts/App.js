@@ -2,7 +2,7 @@
 class App{ 
     constructor(){
         this.photographersSection = document.querySelector(".photographer_section");
-        this.photographersApi = new Api('./data/photographers.json')
+        this.photographersApi = new Api('./assets/data/photographers.json')
     }
 
     async main(){
