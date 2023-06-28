@@ -1,7 +1,3 @@
-
-// class Modal{
-
-// }
 function displayModal() {
     console.log("je suis dans displayModal")
     const modal = document.getElementById("contact_modal");

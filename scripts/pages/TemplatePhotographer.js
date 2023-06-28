@@ -3,7 +3,7 @@ class TemplatePhotographer{
 
     constructor(){
         this.urlParams = new URLSearchParams(window.location.search);
-        this.photographersApi = new Api('/data/photographers.json');
+        this.photographersApi = new Api('./data/photographers.json');
         this.init();
         this.currentPhotographer = null;
         this.medias = null;
