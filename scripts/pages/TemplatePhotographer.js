@@ -144,7 +144,7 @@ class TemplatePhotographer{
         `
         <a class="mediaDisplayLink" href="#" title="${myMedia._title}" aria-label="${myMedia._title}">
            ${myMedia._image ? 
-            `<img  class="imgVidMedia" src="${picture}" alt="${myMedia._title}"  data-id="${myMedia._id}">`
+            `<img  class="imgVidMedia" src="${picture}" alt="${myMedia._title}"  aria-label="${myMedia._title}" data-id="${myMedia._id}">`
             
             //ou 
     
