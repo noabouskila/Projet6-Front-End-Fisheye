@@ -10,12 +10,11 @@
   </head>
   <body>
     <!-- header de la page -->
-    <header>
+    <header role="banner" aria-labelledby="main-heading">
       <a href="index.html" aria-label="lien vers page accueil">
-        <h1>
+        <h1 id="main-heading">
           <img src="assets/images/logo.png" class="logo" alt="logo-fisheye"/> 
         </h1>
-       
       </a>
     </header>
     <main id="main" aria-modal="false">
@@ -42,14 +41,15 @@
         <div class="modal"  aria-modal="true" role="dialog">
           <header>
             <h2 id="modalTitle">Contactez-moi</h2>
-            <img src="assets/icons/close.svg" onclick="closeModal()" alt="fermer modale contact"/>
+            <img src="assets/icons/close.svg" onclick="closeModal()" alt="fermer modale contact" aria-label="Fermer la modale de contact">
           </header>
 
           <form  method="GET"  action="photographer.html">
             <div>
               <label for="prenom">Prénom</label>
               <input type="text" id="prenom" placeholder="Saisissez votre prénom" aria-labelledby="prenom"/>
-              <span id="prenomError"  id="prenom-error" aria-labelledby="prenomError"></span>
+              <span id="prenomError"  aria-labelledby="prenomError"></span>
+              <!-- id="prenom-error" -->
             </div>
 
             <div>
@@ -60,7 +60,7 @@
 
             <div>
               <label for="email">Email</label>
-              <input  id="email" type="text" placeholder="Saisissez votre email"aria-labelledby="email" >
+              <input  id="email" type="text" placeholder="Saisissez votre email" aria-labelledby="email" >
               <span id="emailError" aria-labelledby="emailError"></span>
             </div>
 
@@ -88,14 +88,6 @@
 
     <!-- media modal -->
     <div id="media_modal">
-      <!-- <div class="galleryModal" aria-modal="true" role="dialog" aria-describedby="galleryMedia" aria-labelledby="modalgallery"> -->
-        <!-- <div class="lightbox-prev colorMedia" aria-label="suivant">
-          &#10094;
-        </div>
-        <div class="lightbox-next colorMedia" aria-label="precedent">
-          &#10095;
-        </div> -->
-      <!-- </div> -->
     </div>
 
 

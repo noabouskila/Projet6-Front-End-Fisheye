@@ -191,7 +191,7 @@ class TemplatePhotographer{
         divMedia.setAttribute("class", "divMedia")
         
         divMedia.innerHTML = `
-        <div class="lightbox" role="dialog" data-id="${idMedia}" data-title="${titleMedia}">
+        <div class="lightbox" role="dialog" aria-modal="true" data-id="${idMedia}" data-title="${titleMedia}">
             
             <img src="assets/icons/close.svg" alt="fermer modale" class=" closeModal colorMedia" aria-describedby="fermer"/>
            

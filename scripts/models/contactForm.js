@@ -6,6 +6,7 @@ function displayModal() {
     console.log("je suis dans displayModal")
     const modal = document.getElementById("contact_modal");
 	modal.style.display = "block";
+    document.getElementById("prenom").focus();
 
     // Ferme la modal avec la touche 'ESC'
     window.addEventListener("keydown", (event) => {
