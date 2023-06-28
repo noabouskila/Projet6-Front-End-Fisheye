@@ -138,8 +138,8 @@ class TemplatePhotographer{
     getMediaCardDOM(myMedia){
         const article = document.createElement("article");
 
-        const picture =`assets/photographers/${myMedia._image}`;
-        const vid = `assets/photographers/${myMedia._video}`;
+        const picture =`./assets/photographers/${myMedia._image}`;
+        const vid = `./assets/photographers/${myMedia._video}`;
         article.innerHTML = 
         `
         <a class="mediaDisplayLink" href="#" title="${myMedia._title}" aria-label="${myMedia._title}">
@@ -348,7 +348,7 @@ class TemplatePhotographer{
         divMedia.innerHTML = `
         <div class="lightbox" role="dialog" data-id="${media.id}" data-title="${media.title}">
             
-            <img src="assets/icons/close.svg" alt="fermer modale" class=" closeModal colorMedia" aria-describedby="fermer"/>
+            <img src="./assets/icons/close.svg" alt="fermer modale" class=" closeModal colorMedia" aria-describedby="fermer"/>
            
             <main>
                 <div class="lightbox-prev colorMedia" aria-label="suivant">
@@ -356,7 +356,7 @@ class TemplatePhotographer{
                 </div>
           
                 ${ media.image !=null ? 
-                `<img  class="imgVidMedia carousel-image" src="assets/photographers/${media.image}" alt="${media.title}"  data-id="${media.id}">`
+                `<img  class="imgVidMedia carousel-image" src="./assets/photographers/${media.image}" alt="${media.title}"  data-id="${media.id}">`
                 
                 //ou 
         
