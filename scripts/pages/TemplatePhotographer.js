@@ -189,7 +189,7 @@ class TemplatePhotographer{
 
         const divMedia = document.createElement('div')
         divMedia.setAttribute("class", "divMedia")
-        
+
         divMedia.innerHTML = `
         <div class="lightbox" role="dialog" aria-modal="true" data-id="${idMedia}" data-title="${titleMedia}">
             
@@ -233,6 +233,7 @@ class TemplatePhotographer{
         const closeModal = document.querySelector(".closeModal")
         closeModal.addEventListener("click", ()=>{
             mediaModal.style.display = "none"
+            divMedia.innerHTML="";
             main.style.display = "block"
         }) 
 
@@ -242,6 +243,7 @@ class TemplatePhotographer{
         // console.log(event)
             if (event.key === "Backspace" || event.key === "Escape") {
                 mediaModal.style.display = "none";
+                divMedia.innerHTML="";
                 main.style.display = "block"
             }
         });
