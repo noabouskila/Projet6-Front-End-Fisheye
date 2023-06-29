@@ -50,6 +50,13 @@ h1 {
 
 .photographer_section  article p{
     font-size : 15px;
+    color: black;
+}
+.photographer_section  article h3{
+    color : #901C1C;
+}
+.photographer_section  article span{
+    color : grey;
 }
 .photographer_section article img {
     height: 200px;

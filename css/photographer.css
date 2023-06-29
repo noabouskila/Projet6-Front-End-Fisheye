@@ -7,7 +7,7 @@
 
 .photograph-header {
     background-color: #FAFAFA;
-    height: 150px;
+    height: 180px;
     margin: 0 100px;
     padding: 3% 2%;
 }
@@ -83,9 +83,9 @@ form input {
 }
 
 
-
 .heart , .heartTotal{
-    width: 10%
+    width: 10%;
+    cursor : pointer;
 }
 
 .photographer-media-div{
@@ -97,7 +97,11 @@ form input {
 .photographer-media-div article {
     display: flex;
     flex-direction : column;
-    width :30% ;
+    /* width :30% ; */
+    width : 351px;
+    height : 350px ;
+    padding-bottom : 3%
+    
 }
 .div-sort{
     margin: 2% 100px
@@ -114,6 +118,7 @@ form input {
 .titleMedia{
     display : flex;
     justify-content: space-between;
+    color : #901C1C;
 }
 .like {
     display : flex;
@@ -121,7 +126,8 @@ form input {
     width :60%
 }
 .mediaDisplayLike{
-    padding : 0 5%
+    /* padding : 0 5% */
+    padding : 5%;
 }
 
 
@@ -130,9 +136,11 @@ form input {
     justify-content: space-between;
 }
 .img-page-photo{
-    width: 15%;
-    object-fit: cover;
+    /* width: 15%; */
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 .likeTarif{
@@ -163,11 +171,14 @@ form input {
     height: 280px;
     object-fit: cover;
     width: 100%;
+    border-radius : 2%;
 }
 
 .lightbox .imgVidMedia{
-    height: 400px;
-    width: 92%;
+    /* height: 400px;
+    width: 92%; */
+    height : 300px;
+    width : 300px;
     object-fit: cover;
 }
 
