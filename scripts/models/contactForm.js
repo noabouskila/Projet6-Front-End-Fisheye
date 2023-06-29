@@ -7,7 +7,7 @@ function displayModal() {
     // Ferme la modal avec la touche 'ESC'
     window.addEventListener("keydown", (event) => {
         // console.log(event)
-        if (event.key === "Backspace") {
+        if (event.key === "Backspace" || event.key === "Escape") {
             const modal = document.getElementById("contact_modal");
             modal.style.display = "none";
         }

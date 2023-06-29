@@ -141,7 +141,10 @@ form input {
     padding: 2px 19px;
     width: 20%;
     margin: 0 75%;
-    background-color: #DB8876
+    background-color: #DB8876;
+    position: fixed;
+    bottom: 0;
+    left: 0;
 } 
 
 .nbLikes{

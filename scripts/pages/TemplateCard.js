@@ -11,6 +11,7 @@ class TemplateCard{
     // Affiche une "card" description pour chaque photographe (nom prix photo slogan ville)
     getUserCardDOM() {
         const article = document.createElement('article');
+       
         article.innerHTML = 
         `
         <a href=" ${this._photo.href}?id=${this._photo.id} "style="text-decoration:none">

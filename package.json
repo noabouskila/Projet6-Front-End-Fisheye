@@ -4,6 +4,9 @@
     "eslint": "^8.43.0",
     "gh-pages": "^5.0.0"
   },
+  "scripts":{
+    "lint":"eslint ."
+  },
   "predeploy": "npm run build",
   "deploy": "gh-pages -d build"
 }
