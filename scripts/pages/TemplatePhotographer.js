@@ -197,20 +197,20 @@ class TemplatePhotographer{
            
             <main>
                 <div class="lightbox-prev colorMedia" aria-label="suivant">
-                &#10094;
+                    <img src="assets/icons/chevron-left-solid.svg" alt="chevron droit touche suivante "/>
                 </div>
           
                 ${ typeMedia == "picture" ? 
-                `<img  class="imgVidMedia carousel-image" src="${srcMedia}" alt="${titleMedia}"  data-id="${idMedia}">`
+                `<img  class="imgVidMediaCarousel carousel-image" src="${srcMedia}" alt="${titleMedia}"  data-id="${idMedia}">`
                 
                 //ou 
         
-                : `<video class="imgVidMedia carousel-video"  src="${srcMedia}" aria-label="${titleMedia}" data-id="${idMedia}"  
+                : `<video class="imgVidMediaCarousel carousel-video"  src="${srcMedia}" aria-label="${titleMedia}" data-id="${idMedia}"  
                 type="video/mp4" controls></video>`
                 }
 
                 <div class="lightbox-next colorMedia" aria-label="precedent">
-                &#10095;
+                    <img src="assets/icons/chevron-right-solid.svg" alt="chevron left touche précédente "/>
                 </div>
                 
             </main>
@@ -352,20 +352,20 @@ class TemplatePhotographer{
            
             <main>
                 <div class="lightbox-prev colorMedia" aria-label="suivant">
-                &#10094;
+                    <img src="assets/icons/chevron-left-solid.svg" alt="chevron left touche suivante "/>
                 </div>
           
                 ${ media.image !=null ? 
-                `<img  class="imgVidMedia carousel-image" src="./assets/photographers/${media.image}" alt="${media.title}"  data-id="${media.id}">`
+                `<img  class="imgVidMediaCarousel carousel-image" src="./assets/photographers/${media.image}" alt="${media.title}"  data-id="${media.id}">`
                 
                 //ou 
         
-                : `<video class="imgVidMedia carousel-video"  src="assets/photographers/${media.video}" aria-label="${media.title}" data-id="${media.id}"  
+                : `<video class="imgVidMediaCarousel carousel-video"  src="assets/photographers/${media.video}" aria-label="${media.title}" data-id="${media.id}"  
                 type="video/mp4" controls></video>`
                 }
 
                 <div class="lightbox-next colorMedia" aria-label="precedent">
-                &#10095;
+                    <img src="assets/icons/chevron-right-solid.svg" alt="chevron left touche précédente "/>
                 </div>
                 
             </main>
