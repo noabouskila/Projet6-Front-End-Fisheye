@@ -2,6 +2,7 @@
 class TemplatePhotographer{
 
     constructor(){
+        // declarations des proprietes pour quelles soit accessibles partout
         this.urlParams = new URLSearchParams(window.location.search);
         this.photographersApi = new Api('./assets/data/photographers.json');
         this.init();
@@ -13,12 +14,17 @@ class TemplatePhotographer{
     }
 
     async init(){
+        // recuperer les données 
         const Data = await this.photographersApi.get(); 
+
+        // recupere les medias du photographe
         this.medias = Data.media.filter(x => x.photographerId == this.urlParams.get('id')); 
+        // console.log("this.medias", this.medias)
 
-        // console.log(this.medias)   
-
+        // recupere les données du photoagraphe a utiliser dans le header
         this.currentPhotographer = Data.photographers.find(x => x.id == this.urlParams.get('id'));
+        // console.log("this.currentPhotographer", this.currentPhotographer)
+
         
         // affiche les info du photographe en EN-TETE
         const photographerSection = document.querySelector(".photograph-header");
@@ -41,6 +47,7 @@ class TemplatePhotographer{
         const mediaSection = document.querySelector(".photographer-media-div");
         const totalMedia = [];
         
+        // utilisation du FACTORY PATTERN en fnction du type du media
         this.medias.forEach((media) => {    
             const myMedia = new MediaFactory(media).getInstance()  
             // console.log(myMedia) 
@@ -108,12 +115,14 @@ class TemplatePhotographer{
         
         this.classMedias.forEach((classMedia) =>{
             classMedia.addEventListener("click", this.displayMedia.bind(this)) 
+            // classMedia.addEventListener("click", (e)=> this.displayMedia(e)) 
             // lier le contexte de this à la méthode displayMedia. Cela garantit que this fait référence à l'instance de TemplatePhotographer lors de l'appel de displayMedia et que l'événement e est transmis correctement
         })
 
         // option de tri 
         this.selectSort = document.querySelector("#sort")
         this.selectSort.addEventListener("click", this.sortMedia.bind(this))
+
     }
 
     // affiche les infos  en header du photographe
@@ -134,7 +143,7 @@ class TemplatePhotographer{
         `
         return article;
     }
-    // affiche les media (main) du photographe
+    // affiche les media (en main) du photographe
     getMediaCardDOM(myMedia){
         const article = document.createElement("article");
 
@@ -219,7 +228,7 @@ class TemplatePhotographer{
         </div>
         `
 
-        const mediaModal = document.getElementById("media_modal")    
+        const mediaModal = document.getElementById("media_modal")  
        
         // affiche modal
         mediaModal.appendChild(divMedia)
@@ -231,12 +240,13 @@ class TemplatePhotographer{
 
         // ferme la modal au click
         const closeModal = document.querySelector(".closeModal")
+      
         closeModal.addEventListener("click", ()=>{
             mediaModal.style.display = "none"
             divMedia.innerHTML="";
             main.style.display = "block"
         }) 
-
+        
         // ajout
         // Ferme la modal avec la touche 'ESC'
         window.addEventListener("keydown", (event) => {
@@ -341,45 +351,54 @@ class TemplatePhotographer{
 
     // fonction apppellée dans next et prev pour afficher le media en fonction du click des fleche suivantes
     displayMediaAtIndex(index) {
-       
-        const media = this.medias[index];       
 
-        // Afficher l'image correspondante
+        // recupere le media avec le bon index du media en question
+        const media = this.medias[index];      
+    
+        // fermeture de la modale au click
+        const closeModal = document.querySelector(".closeModal")
+        closeModal.addEventListener("click", ()=>{
 
-        const divMedia = document.getElementsByClassName('divMedia')[0];      
-        divMedia.innerHTML = `
-        <div class="lightbox" role="dialog" data-id="${media.id}" data-title="${media.title}">
-            
-            <img src="./assets/icons/close.svg" alt="fermer modale" class=" closeModal colorMedia" aria-describedby="fermer"/>
-           
-            <main>
-                <div class="lightbox-prev colorMedia" aria-label="suivant">
-                    <img src="assets/icons/chevron-left-solid.svg" alt="chevron left touche suivante "/>
-                </div>
-          
-                ${ media.image !=null ? 
-                `<img  class="imgVidMediaCarousel carousel-image" src="./assets/photographers/${media.image}" alt="${media.title}"  data-id="${media.id}">`
-                
-                //ou 
-        
-                : `<video class="imgVidMediaCarousel carousel-video"  src="assets/photographers/${media.video}" aria-label="${media.title}" data-id="${media.id}"  
-                type="video/mp4" controls></video>`
-                }
+            const mediaModal = document.getElementById("media_modal")
+            mediaModal.style.display = "none"
+            divMedia.innerHTML="";
+            main.style.display = "block"
+        })
 
-                <div class="lightbox-next colorMedia" aria-label="precedent">
-                    <img src="assets/icons/chevron-right-solid.svg" alt="chevron left touche précédente "/>
-                </div>
-                
-            </main>
+        // Afficher l'image correspondante 
+        const divMedia = document.getElementsByClassName('imgVidMediaCarousel')[0];  
+        let elm = null;
 
-            <p class="title">${media.title}</p> 
-        </div>
-        `
-        // Mettre à jour le titre du média
+        // si c'est une image
+        if(media.image !=null){
+
+            elm = document.createElement('img');
+            elm.classList.add('imgVidMediaCarousel');
+            elm.classList.add('carousel-image');
+            elm.src = `./assets/photographers/${media.image}`;
+            elm.alt = media.title;
+            elm.setAttribute('data-id', media.id);
+
+        } 
+        //  si cest une video
+        else{
+
+            elm = document.createElement('video');
+            elm.classList.add('imgVidMediaCarousel');
+            elm.classList.add('carousel-image');
+            elm.src = `./assets/photographers/${media.video}`;
+            elm.alt = media.title;
+            elm.setAttribute('data-id', media.id);
+        }
+
+        divMedia.replaceWith(elm)
+
+        // remplacer le titre du media 
         const titleElement = document.querySelector(".title");
         titleElement.textContent = media.title;
-        
+
         return media
+        
     }
 
     // TRI popularité et titre
@@ -447,6 +466,7 @@ class TemplatePhotographer{
             document.querySelector("#sort-title").setAttribute("aria-label", "true");
         }
     }
+
 }
 
 new TemplatePhotographer()

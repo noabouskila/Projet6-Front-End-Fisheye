@@ -41,23 +41,6 @@ function isValidEmail(email) {
     return emailRegex.test(email);
 }
 
-// onblur
-// prenom.addEventListener('blur' , function(){
-//     console.log("mon prenom : " , prenom.value)
-// })
-
-// nom.addEventListener('blur' , function(){
-//     console.log("mon nom : ", nom.value)
-// })
-
-// email.addEventListener('blur' , function(){
-//     console.log("mon email : " , email.value)
-// })
-
-// message.addEventListener('blur' , function(){
-//     console.log("mon message : " , message.value)
-// })
-
 
 // submit
 submitBtn.onclick= function(e){
