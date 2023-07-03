@@ -137,7 +137,7 @@ class TemplatePhotographer{
                 <p>${this.currentPhotographer.tagline}</p>
             </div>
             <button class="contact_button" onclick="displayModal()" aria-label="Contactez-moi" aria-haspopup="dialog" aria-controls="dialog">Contactez-moi</button>
-            <img class="img-page-photo" src="${portrait}" alt=">"aller sur la page de " ${this.currentPhotographer.name} ,  
+            <img class="img-page-photo" src="${portrait}" alt=" page de " ${this.currentPhotographer.name} ,  
              ${this.currentPhotographer.city} , ${this.currentPhotographer.tagline} , ${this.currentPhotographer.price}€ par jour"
             />
         `
@@ -158,7 +158,7 @@ class TemplatePhotographer{
             //ou 
     
             : `<video class="imgVidMedia"  src="${vid}" aria-label="${myMedia._title}" data-id="${myMedia._id}"
-            type="video/mp4"></video>`
+            type="video/mp4" controls></video>`
            }
         </a>
         <div class="titleMedia">
@@ -202,7 +202,7 @@ class TemplatePhotographer{
         divMedia.innerHTML = `
         <div class="lightbox" role="dialog" aria-modal="true" data-id="${idMedia}" data-title="${titleMedia}">
             
-            <img src="assets/icons/close.svg" alt="fermer modale" class=" closeModal colorMedia" aria-describedby="fermer"/>
+            <img src="assets/icons/close.svg" alt="fermer modale" class=" closeModal colorMedia" aria-label="fermer la modale de contact"/>
            
             <main>
                 <div class="lightbox-prev colorMedia" aria-label="suivant">
@@ -389,6 +389,7 @@ class TemplatePhotographer{
             elm.src = `./assets/photographers/${media.video}`;
             elm.alt = media.title;
             elm.setAttribute('data-id', media.id);
+            elm.setAttribute("controls" , "true")
         }
 
         divMedia.replaceWith(elm)
